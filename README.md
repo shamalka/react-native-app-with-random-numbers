@@ -1,1 +1,1 @@
-# react-native-app-with-random-numbers
+# React-Native-News-App
