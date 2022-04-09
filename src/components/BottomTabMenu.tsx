@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Dimensions, TouchableOpacity } from 'react-native';
-import Icon, { Icons } from './Icons';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { Text } from 'react-native';
 import WatchOne from '../screens/WatchOne';
@@ -12,8 +11,8 @@ EStyleSheet.build({$rem: width / 380});
 const Tab = createBottomTabNavigator();
 
 const tabsArray = [
-    { route: 'WatchOne', label: 'Watch 1', type: Icons.MaterialCommunityIcons, activeIcon: 'newspaper', inActiveIcon: 'newspaper-outline', component: WatchOne },
-    { route: 'WatchTwo', label: 'Watch 2', type: Icons.MaterialCommunityIcons, activeIcon: 'text-box-search', inActiveIcon: 'text-box-search-outline', component: WatchTwo },
+    { route: 'WatchOne', label: 'Watch 1', component: WatchOne },
+    { route: 'WatchTwo', label: 'Watch 2', component: WatchTwo },
 ]
 
 const TabBarButton = (props: any) => {

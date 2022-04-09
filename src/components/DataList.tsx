@@ -5,9 +5,6 @@ import DataListItem from './DataListItem';
 
 const DataList = ({ filters, navigation, newsType }: any) => {
   const [listData, setListData]: any = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isEmpty, setIsEmpty] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -54,7 +51,7 @@ const DataList = ({ filters, navigation, newsType }: any) => {
         }
       ]
       setListData(data)
-    }, 20);
+    }, 200);
     return () => clearInterval(interval);
     
   }, []);
