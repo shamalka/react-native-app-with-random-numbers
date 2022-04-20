@@ -6,52 +6,24 @@ import DataListItem from './DataListItem';
 const DataList = ({ filters, navigation, newsType }: any) => {
   const [listData, setListData]: any = useState([]);
 
+  const codeCharacters:any = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"]
+
   useEffect(() => {
     const interval = setInterval(() => {
-      const data:any = [
-        {
-          code: "AAA",
-          number: (Math.random() * (10.00 - 1.00 + 1.00) + 1.00).toFixed(2)
-        },
-        {
-          code: "BBB",
-          number: (Math.random() * (10.00 - 1.00 + 1.00) + 1.00).toFixed(2)
-        },
-        {
-          code: "CCC",
-          number: (Math.random() * (10.00 - 1.00 + 1.00) + 1.00).toFixed(2)
-        },
-        {
-          code: "DDD",
-          number: (Math.random() * (10.00 - 1.00 + 1.00) + 1.00).toFixed(2)
-        },
-        {
-          code: "EEE",
-          number: (Math.random() * (10.00 - 1.00 + 1.00) + 1.00).toFixed(2)
-        },
-        {
-          code: "FFF",
-          number: (Math.random() * (10.00 - 1.00 + 1.00) + 1.00).toFixed(2)
-        },
-        {
-          code: "GGG",
-          number: (Math.random() * (10.00 - 1.00 + 1.00) + 1.00).toFixed(2)
-        },
-        {
-          code: "HHH",
-          number: (Math.random() * (10.00 - 1.00 + 1.00) + 1.00).toFixed(2)
-        },
-        {
-          code: "III",
-          number: (Math.random() * (10.00 - 1.00 + 1.00) + 1.00).toFixed(2)
-        },
-        {
-          code: "JJJ",
-          number: (Math.random() * (10.00 - 1.00 + 1.00) + 1.00).toFixed(2)
-        }
-      ]
+      const data:any = [];
+
+      for (let i = 0; i < 10; i++) {
+        const randomNumber = (Math.random() * (10.00 - 1.00 + 1.00) + 1.00)
+        const randomInt = parseInt(randomNumber.toFixed(0))
+        data.push(
+          {
+            code: codeCharacters[randomInt] + codeCharacters[randomInt + 1] + codeCharacters[randomInt + 2],
+            number: randomNumber.toFixed(2)
+          }
+        )
+      }
       setListData(data)
-    }, 200);
+    }, 1000);
     return () => clearInterval(interval);
     
   }, []);
